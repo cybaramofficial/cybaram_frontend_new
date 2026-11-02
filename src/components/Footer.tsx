@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { PageRoute } from '../types.ts';
 import { OFFICIAL_SOCIAL_LINKS, SocialLinkConfig } from '../data/siteData.ts';
 import { ArrowRight, Shield, CheckCircle, Info } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl.ts';
+import { VILAIYAATTU_ENABLED } from '../data/vilaiyaattuConfig.ts';
 
 interface FooterProps {
   onNavigate: (path: PageRoute) => void;
@@ -66,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             >
               <div className="w-12 h-12 rounded-lg overflow-hidden border border-[#E8EEEA] p-0.5 bg-white shadow-2xs">
                 <img
-                  src="/assets/images/cybaram-detect-protect-support.jpeg"
+                  src={assetUrl('/assets/images/cybaram-detect-protect-support.jpeg')}
                   alt="CybAram — Detect. Protect. Support."
                   className="w-full h-full object-cover rounded-md"
                   referrerPolicy="no-referrer"
@@ -112,7 +114,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   Services
                 </a>
               </li>
-              <li>
+              {VILAIYAATTU_ENABLED && (
+                <li>
                 <a
                   href="/vilaiyaattu"
                   onClick={(e) => handleNav('/vilaiyaattu', e)}
@@ -121,7 +124,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <span>CybAram Vilaiyaattu</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 </a>
-              </li>
+                </li>
+              )}
               <li>
                 <a
                   href="/opportunities"

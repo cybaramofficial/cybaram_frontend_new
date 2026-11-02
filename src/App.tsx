@@ -11,6 +11,7 @@ import { OpportunitiesPage } from './pages/OpportunitiesPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { LegalPage } from './pages/LegalPage.tsx';
 import { VilaiyaattuPage } from './pages/VilaiyaattuPage.tsx';
+import { VILAIYAATTU_ENABLED } from './data/vilaiyaattuConfig.ts';
 
 const KNOWN_SERVICE_SLUGS = [
   'cyber-victim-support',
@@ -29,6 +30,10 @@ function normalizePath(pathname: string): PageRoute {
     : pathname;
   // strip trailing slash if length > 1
   const clean = appPath.endsWith('/') && appPath.length > 1 ? appPath.slice(0, -1) : appPath;
+
+  if (clean === '/vilaiyaattu' && !VILAIYAATTU_ENABLED) {
+    return '/';
+  }
 
   const validRoutes: PageRoute[] = [
     '/',
@@ -125,7 +130,7 @@ export default function App() {
       return <AboutPage onNavigate={handleNavigate} />;
     }
 
-    if (currentPath === '/vilaiyaattu') {
+    if (VILAIYAATTU_ENABLED && currentPath === '/vilaiyaattu') {
       return <VilaiyaattuPage onNavigate={handleNavigate} />;
     }
 

@@ -20,7 +20,8 @@ import {
   Smartphone,
   FileSearch
 } from 'lucide-react';
-import { VILAIYAATTU_CONFIG } from '../data/vilaiyaattuConfig.ts';
+import { VILAIYAATTU_CONFIG, VILAIYAATTU_ENABLED } from '../data/vilaiyaattuConfig.ts';
+import { assetUrl } from '../utils/assetUrl.ts';
 
 interface HomePageProps {
   onNavigate: (path: PageRoute) => void;
@@ -361,7 +362,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden shadow-lg border border-[#DCECE3] bg-white aspect-4/3">
                 <img
-                  src="/src/assets/images/service_digital_safety_net_1792753239595.jpg"
+                  src={assetUrl('/src/assets/images/service_digital_safety_net_1792753239595.jpg')}
                   alt="Indian small-business founder and family reviewing a structured digital protection and cyber risk checklist on a tablet"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -409,7 +410,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div>
                 <div className="relative aspect-16/10 overflow-hidden bg-[#F6F8F6]">
                   <img
-                    src="/assets/images/cyber_support_man_1792744888948.jpg"
+                    src={assetUrl('/assets/images/cyber_support_man_1792744888948.jpg')}
                     alt="An Indian man sitting at a desk calmly documenting incident details in a notebook beside his phone"
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -444,7 +445,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div>
                 <div className="relative aspect-16/10 overflow-hidden bg-[#F6F8F6]">
                   <img
-                    src="/assets/images/digital_privacy_review_1792744888804.jpg"
+                    src={assetUrl('/assets/images/digital_privacy_review_1792744888804.jpg')}
                     alt="An Indian woman reviewing account privacy settings and data visibility on a laptop"
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -479,7 +480,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div>
                 <div className="relative aspect-16/10 overflow-hidden bg-[#F6F8F6]">
                   <img
-                    src="/assets/images/osint_small_business_1792741337713.jpg"
+                    src={assetUrl('/assets/images/osint_small_business_1792741337713.jpg')}
                     alt="Indian small business owner reviewing public enterprise records"
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -514,7 +515,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div>
                 <div className="relative aspect-16/10 overflow-hidden bg-[#F6F8F6]">
                   <img
-                    src="/assets/images/impersonation_check_1792741338258.jpg"
+                    src={assetUrl('/assets/images/impersonation_check_1792741338258.jpg')}
                     alt="Indian professional comparing tablet profiles to detect impersonator"
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -549,7 +550,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div>
                 <div className="relative aspect-16/10 overflow-hidden bg-[#F6F8F6]">
                   <img
-                    src="/assets/images/wellbeing_listening_1792744888958.jpg"
+                    src={assetUrl('/assets/images/wellbeing_listening_1792744888958.jpg')}
                     alt="Two Indian adults having a warm, calm, non-clinical supportive conversation over tea in a serene room"
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -584,7 +585,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div>
                 <div className="relative aspect-16/10 overflow-hidden bg-[#F6F8F6]">
                   <img
-                    src="/src/assets/images/service_digital_safety_net_1792753239595.jpg"
+                    src={assetUrl('/src/assets/images/service_digital_safety_net_1792753239595.jpg')}
                     alt="Indian small business founder and family reviewing a digital protection checklist"
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -615,10 +616,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* 5. Interactive Awareness Experience: CybAram Vilaiyaattu */}
+      {VILAIYAATTU_ENABLED && (
       <section className="py-20 bg-[#172B4D] text-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/assets/images/hero_cinematic_vilaiyaattu_1792756475424.jpg"
+            src={assetUrl('/assets/images/hero_cinematic_vilaiyaattu_1792756475424.jpg')}
             alt="CybAram Vilaiyaattu Interactive Awareness Experience"
             className="w-full h-full object-cover object-center scale-[1.01] opacity-20"
             referrerPolicy="no-referrer"
@@ -709,6 +711,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
         </div>
       </section>
+      )}
 
       {/* 6. A Simple Process Section */}
       <section className="py-20 bg-white border-t border-[#E8EEEA]">

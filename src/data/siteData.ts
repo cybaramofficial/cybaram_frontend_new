@@ -1,4 +1,5 @@
 import { ServiceItem, FaqItem, ContributionArea } from '../types.ts';
+import { assetUrl } from '../utils/assetUrl.ts';
 
 export const SERVICES_DATA: Record<string, ServiceItem> = {
   'cyber-victim-support': {
@@ -9,7 +10,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
     badge: 'CYBER VICTIM SUPPORT',
     heroHeadline: 'You don’t have to figure it out alone.',
     heroSubheadline: 'When something goes wrong online, knowing where to turn can feel overwhelming. We help you slow down, preserve critical evidence safely, and understand your immediate protective and reporting options.',
-    image: '/assets/images/cyber_support_man_1792744888948.jpg',
+    image: assetUrl('/assets/images/cyber_support_man_1792744888948.jpg'),
     imageAlt: 'An Indian man sitting at a desk calmly documenting incident details in a notebook beside his phone',
     whoIsItFor: [
       'Individuals who suspect they have transferred money to a fraudulent account or scammer.',
@@ -78,7 +79,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
     badge: 'DIGITAL EXPOSURE ASSESSMENT',
     heroHeadline: 'Understand what information about you is exposed online.',
     heroSubheadline: 'Old profiles, public directories, and overlooked privacy settings can leave your personal phone number, home address, and identity details visible to anyone. We help you audit and reduce that exposure.',
-    image: '/assets/images/digital_privacy_review_1792744888804.jpg',
+    image: assetUrl('/assets/images/digital_privacy_review_1792744888804.jpg'),
     imageAlt: 'An Indian woman reviewing account privacy settings and data visibility on a laptop in a sunlit room',
     whoIsItFor: [
       'Individuals reviewing personal privacy, home address visibility, or personal phone number exposure.',
@@ -146,7 +147,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
     badge: 'BUSINESS-FOCUSED PUBLIC-SOURCE RESEARCH',
     heroHeadline: 'Make better-informed business decisions with responsible digital research.',
     heroSubheadline: 'Small businesses often face spoofed vendor domains, brand impersonation, and unverified digital partners. We help eligible businesses evaluate legitimate online risk indicators using open, public information.',
-    image: '/assets/images/osint_small_business_1792741337713.jpg',
+    image: assetUrl('/assets/images/osint_small_business_1792741337713.jpg'),
     imageAlt: 'An Indian small-business founder reviewing legitimate public documents and research on a laptop in an office',
     whoIsItFor: [
       'Small enterprises and startups verifying public credentials and domain integrity of new vendors.',
@@ -214,7 +215,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
     badge: 'IMPERSONATION MONITORING',
     heroHeadline: 'Help protect your digital identity from online impersonation.',
     heroSubheadline: 'Fake social profiles, cloned business pages, and deceptive accounts mislead your followers and harm your reputation. We help creators, professionals, and small businesses identify, document, and report impersonation through official channels.',
-    image: '/assets/images/impersonation_check_1792741338258.jpg',
+    image: assetUrl('/assets/images/impersonation_check_1792741338258.jpg'),
     imageAlt: 'An Indian creator and professional reviewing tablet screens to identify an impersonation clone profile',
     whoIsItFor: [
       'Creators, educators, and writers whose names, photos, or content are being mirrored by fraudulent accounts.',
@@ -282,7 +283,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
     badge: 'HUMAN-CENTERED LISTENING SUPPORT',
     heroHeadline: 'Sometimes, you just need someone to listen.',
     heroSubheadline: 'Life can feel heavy sometimes. You might be dealing with loneliness, carrying worries you have not shared, going through a difficult day, or recovering from an online incident. CybAram offers a respectful, non-judgmental space where you can talk and feel heard.',
-    image: '/assets/images/wellbeing_listening_1792744888958.jpg',
+    image: assetUrl('/assets/images/wellbeing_listening_1792744888958.jpg'),
     imageAlt: 'Two Indian adults having a warm, calm, non-clinical conversation over tea in a serene room',
     whoIsItFor: [
       'Anyone experiencing loneliness, isolation, or feeling disconnected from those around them.',
@@ -351,7 +352,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
     badge: 'DIGITAL RISK AWARENESS & INSURANCE GUIDANCE',
     heroHeadline: 'Prepare for the unexpected digital risk.',
     heroSubheadline: 'Explore digital-risk protection awareness and learn what to check when considering insurance options.',
-    image: '/src/assets/images/service_digital_safety_net_1792753239595.jpg',
+    image: assetUrl('/src/assets/images/service_digital_safety_net_1792753239595.jpg'),
     imageAlt: 'An Indian small-business founder and family reviewing a structured digital protection and cyber risk checklist on a tablet',
     whoIsItFor: [
       'Individuals and families seeking clarity on personal cyber insurance policies, identity theft protections, and coverage terms.',
@@ -498,7 +499,7 @@ export const CONTRIBUTION_AREAS: ContributionArea[] = [
     id: 'ui-ux',
     title: 'UI/UX Design',
     icon: 'PenTool',
-    image: '/assets/images/contrib_ui_ux_1792749900919.jpg',
+    image: assetUrl('/assets/images/contrib_ui_ux_1792749900919.jpg'),
     imageAlt: 'UI/UX wireframe sketchbook with color swatches and laptop interface mockups on a clean desk',
     shortDesc: 'Design accessible, calm user journeys and visual layouts for individuals experiencing digital distress.',
     keywords: ['UI/UX', 'Design', 'Figma', 'Wireframes', 'Accessibility', 'Mobile', 'Typography', 'Usability'],
@@ -515,7 +516,7 @@ export const CONTRIBUTION_AREAS: ContributionArea[] = [
     id: 'frontend',
     title: 'Frontend Development',
     icon: 'Code',
-    image: '/assets/images/contrib_frontend_1792749902810.jpg',
+    image: assetUrl('/assets/images/contrib_frontend_1792749902810.jpg'),
     imageAlt: 'Laptop displaying clean React and TypeScript code beside a responsive web application preview',
     shortDesc: 'Build performant, accessible React and TypeScript interfaces and privacy tools that load quickly on any device.',
     keywords: ['Frontend', 'React', 'TypeScript', 'Tailwind', 'Web', 'Components', 'Performance', 'Code'],
@@ -532,7 +533,7 @@ export const CONTRIBUTION_AREAS: ContributionArea[] = [
     id: 'cyber-research',
     title: 'Cyber Awareness and Research Support',
     icon: 'Search',
-    image: '/assets/images/contrib_cyber_research_1792749902179.jpg',
+    image: assetUrl('/assets/images/contrib_cyber_research_1792749902179.jpg'),
     imageAlt: 'Cybersecurity research papers, scam prevention checklists, and loupe with handwritten analysis notes',
     shortDesc: 'Contribute to ethical open-source research methodologies, scam trend verification, and threat awareness guides.',
     keywords: ['Cyber awareness', 'Research', 'OSINT', 'Threat verification', 'Scams', 'Phishing', 'Investigation', 'Security'],
@@ -549,7 +550,7 @@ export const CONTRIBUTION_AREAS: ContributionArea[] = [
     id: 'content-community',
     title: 'Content and Community Awareness',
     icon: 'BookOpen',
-    image: '/assets/images/contrib_content_1792749902164.jpg',
+    image: assetUrl('/assets/images/contrib_content_1792749902164.jpg'),
     imageAlt: 'Multilingual scam alert brochures, awareness posters, and drafting materials arranged on a studio table',
     shortDesc: 'Craft plain-language scam alerts, regional-language safety posters, and relatable digital literacy resources.',
     keywords: ['Content', 'Community', 'Writing', 'Education', 'Infographics', 'Posters', 'Regional Languages', 'Awareness'],
@@ -565,7 +566,7 @@ export const CONTRIBUTION_AREAS: ContributionArea[] = [
     id: 'people-support',
     title: 'HR and People Support',
     icon: 'Users',
-    image: '/assets/images/contrib_hr_people_1792749903386.jpg',
+    image: assetUrl('/assets/images/contrib_hr_people_1792749903386.jpg'),
     imageAlt: 'Indian volunteer coordinators engaged in a warm, welcoming contributor onboarding discussion',
     shortDesc: 'Help coordinate volunteer communications, contributor onboarding, and support an empathetic team culture.',
     keywords: ['HR', 'People', 'Volunteering', 'Onboarding', 'Coordination', 'Culture', 'Operations'],
@@ -581,7 +582,7 @@ export const CONTRIBUTION_AREAS: ContributionArea[] = [
     id: 'volunteering',
     title: 'Community Volunteering & Peer Listening',
     icon: 'Handshake',
-    image: '/assets/images/contrib_peer_listening_1792749902961.jpg',
+    image: assetUrl('/assets/images/contrib_peer_listening_1792749902961.jpg'),
     imageAlt: 'Warm table setting with tea cups and an open notebook representing supportive community listening',
     shortDesc: 'Offer empathetic, non-judgmental listening support to people experiencing loneliness, life stress, or digital deception.',
     keywords: ['Volunteering', 'Peer listening', 'Community', 'Mental wellbeing', 'Listening', 'Empathy', 'Support'],

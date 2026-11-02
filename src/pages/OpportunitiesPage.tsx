@@ -306,7 +306,7 @@ export const OpportunitiesPage: React.FC<OpportunitiesPageProps> = ({ onNavigate
         </div>
       </section>
 
-      {/* 4. Contribution Areas List (Redesigned Editorial Layout with 1:1 Thumbnails) */}
+      {/* 4. Contribution Areas Grid */}
       <section id="contribution-areas" className="py-20 bg-white border-t border-[#E8EEEA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -353,75 +353,73 @@ export const OpportunitiesPage: React.FC<OpportunitiesPageProps> = ({ onNavigate
               </div>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 items-stretch">
               {filteredAreas.map((area) => (
                 <div
                   key={area.id}
                   id={area.id}
-                  className="bg-[#F6F8F6] p-5 sm:p-6 rounded-2xl border border-[#E8EEEA] hover:border-[#123C35]/30 transition-all flex flex-col md:flex-row md:items-center gap-6"
+                  className="flex h-full flex-col overflow-hidden rounded-xl border border-[#E8EEEA] bg-[#F6F8F6] transition-colors hover:border-[#123C35]/30"
                 >
-                  {/* Left: 1:1 Square Thumbnail Image */}
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-xl overflow-hidden border border-[#E8EEEA] bg-white shrink-0">
+                  <div className="aspect-[16/10] w-full overflow-hidden border-b border-[#E8EEEA] bg-[#E8F5EE]">
                     {area.image ? (
                       <img
                         src={area.image}
                         alt={area.imageAlt || area.title}
-                        className="w-full h-full object-cover"
+                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <div className="w-full h-full bg-[#E8F5EE] flex items-center justify-center">
+                      <div className="flex h-full w-full items-center justify-center">
                         {getIcon(area.icon)}
                       </div>
                     )}
                   </div>
 
-                  {/* Center: Contribution Information */}
-                  <div className="flex-1 space-y-2">
-                    <div className="flex flex-wrap items-center gap-2.5">
-                      <h3 className="text-lg sm:text-xl font-bold text-[#172B4D]">
-                        {area.title}
-                      </h3>
-                      <span className="text-xs text-[#123C35] font-medium">
-                        · {area.statusNote}
-                      </span>
+                  <div className="flex flex-1 flex-col gap-4 p-5">
+                    <div className="space-y-2">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="text-lg font-bold text-[#172B4D]">
+                          {area.title}
+                        </h3>
+                        <span className="text-xs font-medium text-[#123C35]">
+                          {area.statusNote}
+                        </span>
+                      </div>
+
+                      <p className="text-sm leading-relaxed text-[#53615C]">
+                        {area.shortDesc}
+                      </p>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-[#53615C] leading-relaxed">
-                      {area.shortDesc}
-                    </p>
-
-                    {/* Skill Tags / Responsibilities */}
-                    <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                    <div className="flex flex-wrap items-center gap-1.5">
                       {area.keywords?.slice(0, 5).map((kw, idx) => (
                         <span
                           key={idx}
-                          className="text-[11px] font-medium text-[#172B4D]/75 bg-white px-2 py-0.5 rounded border border-[#E8EEEA]"
+                          className="rounded border border-[#E8EEEA] bg-white px-2 py-1 text-[11px] font-medium text-[#172B4D]/75"
                         >
                           {kw}
                         </span>
                       ))}
                     </div>
-                  </div>
 
-                  {/* Right: Actions (Express Interest & Share) */}
-                  <div className="flex sm:flex-row md:flex-col lg:flex-row items-center gap-2 shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-[#E8EEEA]">
-                    <button
-                      type="button"
-                      onClick={() => handleSelectArea(area.title)}
-                      className="flex-1 md:flex-initial px-4 py-2.5 rounded-lg text-xs font-semibold bg-[#123C35] text-white hover:bg-[#0e2f2a] active:scale-[0.99] transition-all cursor-pointer whitespace-nowrap shadow-2xs"
-                    >
-                      Express interest
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleShare(area.title, area.shortDesc, area.id)}
-                      title={`Share ${area.title}`}
-                      className="px-3 py-2.5 rounded-lg text-xs font-medium text-[#53615C] hover:text-[#172B4D] bg-white border border-[#E8EEEA] hover:bg-[#E8F5EE] transition-colors cursor-pointer flex items-center gap-1.5 whitespace-nowrap"
-                    >
-                      <Share2 className="w-3.5 h-3.5" />
-                      <span>Share</span>
-                    </button>
+                    <div className="mt-auto flex flex-wrap items-center gap-2 border-t border-[#E8EEEA] pt-4">
+                      <button
+                        type="button"
+                        onClick={() => handleSelectArea(area.title)}
+                        className="flex-1 rounded-lg bg-[#123C35] px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#0e2f2a] cursor-pointer"
+                      >
+                        Express interest
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleShare(area.title, area.shortDesc, area.id)}
+                        title={`Share ${area.title}`}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-[#E8EEEA] bg-white px-3 py-2.5 text-xs font-medium text-[#53615C] transition-colors hover:bg-[#E8F5EE] hover:text-[#172B4D] cursor-pointer"
+                      >
+                        <Share2 className="h-3.5 w-3.5" />
+                        <span>Share</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
