@@ -1,0 +1,6 @@
+{
+  "name": "CybAram",
+  "description": "Practical, people-first cybersecurity guidance and support for individuals, scam victims, and eligible small businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

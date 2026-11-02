@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
-@import './app/features/home/home-page.component.css';
-@import './app/features/content/content-page.component.css';
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:20px}
-body{margin:0;background:#fff;color:#102a39;font-family:'DM Sans','Manrope',sans-serif;-webkit-font-smoothing:antialiased}
-button,a{-webkit-tap-highlight-color:transparent}
-img{display:block;max-width:100%}

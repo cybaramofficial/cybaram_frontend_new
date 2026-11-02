@@ -1,0 +1,657 @@
+# CYBARAM VILAIYAATTU — COMPLETE GAMEPLAY REDESIGN AND IMPLEMENTATION PROMPT
+
+## Project objective
+
+Upgrade the existing **CybAram Vilaiyaattu** interactive cybersecurity-awareness experience in the current CybAram website.
+
+Refer to the screenshots already provided in this project, including:
+
+1. The Cyberam Vilaiyaattu landing page.
+2. The current Click or Skip gameplay screen.
+3. The current Spot the Scam investigation screen.
+
+The current interface has a suitable forest-green and navy colour palette, but the gameplay layout is crowded, the interactions are not immediately obvious, and the experience feels more like a technical dashboard than an engaging game.
+
+Redesign the feature into a polished, animated, story-driven cybersecurity-awareness experience for ordinary people.
+
+The experience must combine:
+
+- Realistic digital scenarios.
+- Animated cartoon characters and human reactions.
+- Relevant illustrations, images, and short animations.
+- Clear separation between the scenario, investigation, available actions, and feedback.
+- Easy-to-understand controls.
+- Immediate visual consequences for player decisions.
+- Sound effects, points, encouragement, and celebrations.
+- Two separate scenario banks containing at least 100 distinct scenarios each.
+- Randomised sessions and fresh questions on replay.
+- A working share-results feature.
+
+**Important:** Work inside the existing project. Inspect the existing components, routes, game logic, styling, and assets before modifying anything. Preserve the current CybAram website, header, routes, existing functionality, and service-specific consent forms. Do not rebuild unrelated parts of the website.
+
+The result must be genuinely interactive, not a static mock-up or a conventional school-style multiple-choice quiz.
+
+---
+
+# 1. Brand identity and navigation
+
+Retain the existing section name **CybAram Vilaiyaattu** for now.
+
+Keep the existing header navigation and the internal game route. The experience must open in the same browser tab.
+
+Use the established CybAram visual identity:
+
+- Forest green: `#123C35`
+- Navy: `#172B4D`
+- Off-white: `#F6F8F6`
+- Soft sage: `#DCECE3`
+- White backgrounds
+- Readable dark body text
+
+Use the existing typography and button system.
+
+The visual personality should be friendly, premium, human-centred, and engaging. It should not resemble a generic arcade website, a corporate dashboard, or a children's worksheet.
+
+Introduce original animated characters, subtle motion, meaningful illustrations, and cinematic scene transitions while retaining CybAram's professional identity.
+
+# 2. Redesign the main landing page
+
+## Hero banner
+
+Replace the plain introductory section with a wide, attractive, cinematic banner.
+
+Suggested eyebrow:
+
+**CYBARAM INTERACTIVE AWARENESS**
+
+Suggested headline:
+
+**Think Before You Click. Play Before You Risk.**
+
+Suggested description:
+
+“Explore everyday online situations, uncover hidden warning signs, and practise safer digital decisions through interactive stories.”
+
+Primary CTA: **Start Playing**
+
+Create a relevant visual showing ordinary people in a believable environment, such as an Indian home or workplace, interacting with digital devices.
+
+Use subtle cybersecurity-related visual elements, realistic lighting, and the existing forest-green and navy palette. Keep sufficient clear space for text and buttons.
+
+Do not use generic hooded hackers, excessive neon code, or unrelated stock imagery.
+
+Use existing suitable assets or create original illustrations if the environment supports image generation. Do not invent image URLs or leave broken image references.
+
+## Two game cards
+
+Display only these two experiences:
+
+### Game A: Click or Skip — Everyday Reflex
+
+Description:
+
+“Unexpected messages. Emotional pressure. Important decisions. Can you recognise the risk before you click?”
+
+Show a large, attractive preview of an animated smartphone, a realistic notification, and a character reacting to the message.
+
+### Game B: Spot the Scam — Digital Investigation
+
+Description:
+
+“Inspect messages, uncover suspicious clues, and learn how to distinguish scams from legitimate communication.”
+
+Show a visual preview of an animated email or message investigation, with relevant clues highlighted.
+
+Each card must contain:
+
+- A large scenario-specific visual or short animated preview.
+- A clear title and concise description.
+- A visible Play button.
+- A subtle hover or focus animation.
+- A consistent, spacious layout.
+- A functional link to the corresponding game.
+
+Do not use small icons as substitutes for the main game visuals.
+
+# 3. Fix the gameplay layout and alignment
+
+This is one of the highest-priority requirements.
+
+The current interface places a large scenario panel on the left and multiple small information panels, evidence lists, and answer cards on the right. This makes the game feel crowded and difficult to understand.
+
+**Redesign the layout around a simple, clearly separated gameplay sequence.**
+
+## Recommended desktop layout
+
+<box gap={2} border radius="xl" padding={3}>
+  <box background="#172B4D" radius="md" padding={3}>
+    <text color="#FFFFFF" weight="medium">A. GAME HEADER</text>
+    <text color="#FFFFFF" size="sm">Game title · Scenario progress · Score · Sound · Exit</text>
+  </box>
+  <box background="#DCECE3" radius="md" padding={3}>
+    <text color="#123C35" weight="medium">B. QUESTION / SCENARIO</text>
+    <text color="#123C35" size="sm">Clear scenario title, short story, and large animated scene</text>
+  </box>
+  <box background="#F6F8F6" border radius="md" padding={3}>
+    <text weight="medium">C. INTERACTION / INVESTIGATION</text>
+    <text size="sm">Inspect a message, reveal a clue, or examine the suspicious detail</text>
+  </box>
+  <box background="#FFFFFF" border radius="md" padding={3}>
+    <text weight="medium">D. YOUR DECISION</text>
+    <text size="sm">Large, clearly labelled actions with comfortable spacing</text>
+  </box>
+  <box background="#DCECE3" radius="md" padding={3}>
+    <text color="#123C35" weight="medium">E. FEEDBACK / CONSEQUENCE</text>
+    <text color="#123C35" size="sm">Animated character reaction, explanation, points, and Continue</text>
+  </box>
+</box>
+
+Implement these as distinct visual sections, not as five permanent panels competing for attention.
+
+The game should reveal only the controls and information relevant to the current step.
+
+## Spacing and readability
+
+- Use generous, consistent spacing between sections.
+- Keep a clear visual hierarchy between the question, scenario, investigation, answer, and feedback.
+- Use consistent margins, padding, alignment, and typography.
+- Do not place multiple tiny cards next to each other when a larger, simpler interaction would be easier.
+- Avoid unnecessary borders, excessive rounded cards, and nested panels.
+- Use concise text and readable font sizes.
+- Make the primary action immediately obvious.
+- Use clear labels such as **Scenario**, **Inspect the Message**, **Your Decision**, and **What Happened?** when relevant.
+- Keep the progress indicator and score visible but unobtrusive.
+- Do not place the main answer controls far away from the scenario they relate to.
+
+## Mobile layout
+
+On mobile, use one clear vertical sequence:
+
+1. Compact game header.
+2. Scenario title and short description.
+3. Large image or animated scene.
+4. Interactive details.
+5. Available actions.
+6. Animated feedback and Continue.
+
+Avoid horizontal scrolling, cramped columns, tiny text, and interactions that require hovering.
+
+The game must be easy to understand even for a first-time visitor.
+
+# 4. Build a reusable animated character system
+
+Create an original, cohesive set of friendly illustrated characters that can appear throughout both games.
+
+Character styles may include:
+
+- An Indian working woman managing household responsibilities and using a smartphone.
+- An Indian family consisting of adults and children.
+- A working professional receiving a suspicious email.
+- A small-business owner reviewing a payment request.
+- A delivery recipient receiving a suspicious parcel message.
+- An original friendly cybersecurity guide character.
+- A family member who explains or celebrates a safer digital decision.
+
+Characters should be relatable to ordinary Indian users without relying on stereotypes.
+
+Use a consistent illustration style across all scenarios. Characters should have appropriate expressions, poses, clothing, and settings.
+
+Prefer locally bundled sprite sheets, SVG animations, CSS animations, canvas, or short original animated assets where practical. Use GIFs or short videos when suitable.
+
+Do not require an external image request for every animation frame. Avoid heavy video files when a lightweight animation can achieve the same effect.
+
+### Character animation states
+
+Where appropriate, create reusable animation states such as:
+
+- Idle or breathing.
+- Walking.
+- Running.
+- Looking at a phone.
+- Reading a message.
+- Thinking or inspecting.
+- Happy reaction.
+- Clapping.
+- Surprised reaction.
+- Concerned reaction.
+- Realising a mistake.
+- Safely putting the phone away.
+- Returning to a normal daily activity.
+
+These animations should be reusable across scenarios rather than creating an entirely separate animation system for every question.
+
+Characters should react to the player's actual decisions. Do not display the same reaction regardless of the selected action.
+
+# 5. Click or Skip — story-driven gameplay
+
+Transform Click or Skip into an interactive series of everyday digital encounters.
+
+The player should feel that they are participating in a short animated story, not answering a question from a list.
+
+## Scenario structure
+
+Each round should contain:
+
+1. A short animated introduction.
+2. A relevant visual situation.
+3. A simulated message or notification.
+4. Optional inspection of suspicious details.
+5. A clearly separated decision area.
+6. An animated consequence.
+7. A concise learning explanation.
+8. Points and a Continue button.
+
+## Example A: Work-from-home job scam
+
+Create a story involving an Indian woman at home who receives an attractive work-from-home job offer on her smartphone.
+
+The offer might promise unusually high earnings for minimal work and request a registration fee or sensitive personal information.
+
+The animation should show her normal home environment and the incoming notification. She should look interested and curious rather than frightened from the beginning.
+
+### If the player selects the risky option
+
+If the player chooses to click the suspicious offer or follow its instructions without checking, show a simulated consequence:
+
+- The character opens a fictional job-registration screen.
+- A suspicious payment request appears.
+- Warning indicators become visible.
+- The character's expression changes from excitement to concern or realisation.
+- A brief animated trap or warning illustration can appear, showing that she is being drawn into a scam.
+- Display a message explaining that upfront fees, pressure, and unrealistic income promises are warning signs.
+
+Do not depict actual financial loss as a guaranteed result. The animation represents a possible risk, not a factual outcome.
+
+### If the player selects the safer option
+
+If the player inspects the offer, avoids paying upfront, and verifies the employer through independently obtained information:
+
+- Show the suspicious details being identified.
+- Animate the character safely closing the message or reporting it.
+- Show her returning happily to her normal work or household activities.
+- If a family is present in the scene, show them smiling or clapping to celebrate the safe decision.
+- Award the appropriate points and display a short safety lesson.
+
+The positive animation must reflect the actual safer action chosen.
+
+## Example B: Electricity disconnection scam
+
+Show a person receiving an urgent message claiming that electricity will be disconnected unless a link is clicked immediately.
+
+If the player clicks without checking, show a simulated suspicious payment or credential request and a clear warning.
+
+If the player checks the message and verifies it through an independently obtained official electricity provider channel, show the character safely avoiding the suspicious link.
+
+Do not depict a real electricity provider as sending the fictional scam message. Use a fictional sender.
+
+## Example C: Suspicious parcel fee
+
+Show an animated delivery notification requesting an unexpected redelivery fee.
+
+Allow the player to inspect the sender, message, and simulated destination details. Animate the consequence of the selected action.
+
+## Example D: Unexpected bank or payment request
+
+Show a simulated payment or banking-related message with appropriate warning signs.
+
+The player should be encouraged to verify through an official app or independently obtained contact details rather than trusting the message or calling a number supplied within it.
+
+## Decision controls
+
+Use large, context-specific controls integrated into the scene.
+
+Examples:
+
+- Inspect Message
+- Check Sender
+- Verify Safely
+- Click Anyway
+- Ignore and Report
+
+Do not show every action in every scenario. The choices should make sense in the current story.
+
+Keep risky actions inside the simulation. Never open a real suspicious URL, send real money, or request real credentials.
+
+# 6. Family reactions and emotional feedback
+
+Use animated reactions as an integral part of the learning experience.
+
+When the player makes a safe and correct decision:
+
+- Show the character visibly recognising the warning sign.
+- Animate a family member or the family, where appropriate, smiling, clapping, or giving an encouraging gesture.
+- Display a brief success animation.
+- Play a pleasant positive sound if audio is enabled.
+- Award the appropriate points.
+- Show a concise explanation of why the action was safer.
+
+When the player makes an unsafe decision:
+
+- Show a gentle, understandable consequence within the fictional scenario.
+- Use concerned or surprised expressions rather than humiliating the character.
+- Highlight the missed warning sign.
+- Explain the safer alternative.
+- Offer encouragement and a chance to continue learning.
+
+Do not show family celebrations in every scenario if they do not fit the story. Use reactions appropriate to the people and context involved.
+
+Never shame the player, use frightening real-world loss imagery unnecessarily, or imply that someone deserves to be scammed.
+
+The goal is to make learning emotionally memorable while remaining respectful.
+
+# 7. Spot the Scam — interactive visual investigation
+
+Transform Spot the Scam from a technical forensic dashboard into an accessible investigation story.
+
+## Scenario introduction
+
+Start with a short animated scene in which a person receives an email, text, social-media message, job offer, shopping offer, or business communication.
+
+Display a large, readable simulation of the message.
+
+Let the player interact with the relevant areas:
+
+- Sender identity.
+- Displayed email address or domain.
+- Message wording.
+- Urgency or pressure tactics.
+- Link destination preview.
+- Attachment information.
+- Payment or credential request.
+- Contextual details that help verify authenticity.
+
+## Investigation interaction
+
+When the player taps or clicks a clue:
+
+- Highlight the selected detail.
+- Show a short explanation or inspection result.
+- Add the discovered clue to a compact evidence tray.
+- Update the investigation progress.
+
+Do not permanently show multiple technical panels before the player begins.
+
+Keep advanced details behind an optional **More Details** control.
+
+Once the player has investigated enough, ask for a conclusion using large, clear controls:
+
+- Looks Suspicious
+- Looks Legitimate
+- Not Enough Evidence
+
+After the decision, animate the explanation, show which clues mattered, and explain the safer next action.
+
+Include legitimate messages and ambiguous scenarios. Do not teach users that every unfamiliar message is a scam.
+
+Use fictional companies and domains unless a real example has been verified and is appropriate to include.
+
+# 8. Separate scenario bank for each game
+
+The current five fixed questions are not enough.
+
+Implement two separate, structured scenario banks:
+
+- **Click or Skip:** at least 100 distinct scenarios.
+- **Spot the Scam:** at least 100 distinct scenarios.
+
+These must be separate datasets with distinct scenario IDs, content, visuals, decisions, and explanations.
+
+Do not simply copy one question bank into the other game.
+
+Each scenario should include, as applicable:
+
+- Unique ID.
+- Title.
+- Category.
+- Difficulty.
+- Scenario description.
+- Character and setting.
+- Message or notification content.
+- Image or animation reference.
+- Available inspection actions.
+- Decision options.
+- Expected safe action or appropriately qualified conclusion.
+- Scoring rules.
+- Outcome animation.
+- Feedback explanation.
+- Learning takeaway.
+
+Spot the Scam must also contain investigation clues and evidence data.
+
+Click or Skip must focus on everyday decisions and their simulated consequences.
+
+### Required content categories
+
+Include varied scenarios covering:
+
+- Work-from-home job scams.
+- Fake recruitment and registration fees.
+- Electricity disconnection messages.
+- Parcel-delivery and redelivery fees.
+- Impersonation and suspicious customer support.
+- OTP and credential requests.
+- Fake payment confirmations.
+- Suspicious online shopping offers.
+- Investment and unrealistic-return promises.
+- Suspicious attachments.
+- Social-media impersonation.
+- Urgent requests from supposed colleagues or managers.
+- Business email compromise and payment-detail changes.
+- Legitimate messages that require contextual verification.
+- Ambiguous messages where verification is safer than guessing.
+
+Do not create superficial duplicates by changing only a name or payment amount. Vary the context, interaction, clues, character, and lesson.
+
+Review scenario content for factual consistency. Do not claim independent or legal verification unless it has actually taken place.
+
+# 9. Randomised rounds and fresh replay
+
+Implement genuine random selection from the two scenario banks.
+
+- Use five scenarios per round as the initial default.
+- Randomise the scenario order for each new round.
+- Do not repeat a scenario within the same round.
+- Avoid reusing scenarios from the immediately previous round wherever enough unused scenarios are available.
+- Keep the two game banks independent.
+- Do not show a fixed sequence every time the player starts.
+- On Replay, select a fresh set of scenarios rather than resetting the same five questions.
+- Remember recent scenario IDs locally where practical.
+- Handle unavailable browser storage without breaking the game.
+- Reset the current round's answers, clue state, points, and progress correctly.
+- Preserve the completed round's result until the player starts a new round.
+
+Use a reliable shuffle-and-select implementation without replacement within a round.
+
+A five-scenario round is only a session length. The underlying bank must contain at least 100 distinct scenarios for each game.
+
+# 10. Scoring and progress
+
+Use a transparent scoring system based on actual player actions.
+
+- Award points for safe decisions and relevant investigation.
+- Award partial credit where appropriate.
+- Do not award points repeatedly for clicking the same clue.
+- Avoid negative scores.
+- Ensure the final percentage matches the scoring rules.
+- Show progress such as “Scenario 2 of 5.”
+- Keep the score visible without allowing it to dominate the scene.
+
+Do not display a high score, streak, or achievement unless it has genuinely been earned.
+
+# 11. Sound and audio controls
+
+The existing Audio On control must work.
+
+Audio should be disabled by default until the user enables it. Respect the user's choice throughout the session.
+
+Use appropriate, gentle sound effects:
+
+### Safe or correct decision
+
+A short, pleasant success chime.
+
+### Risky or incorrect decision
+
+A gentle caution sound, not a harsh alarm or frightening failure buzzer.
+
+### Scene transition
+
+A subtle transition sound, if enabled.
+
+### Medium score
+
+An encouraging, upbeat sound.
+
+### High score
+
+A cheerful celebratory sound.
+
+### Low score
+
+A warm, supportive sound that encourages another attempt.
+
+Use original or appropriately licensed assets, or lightweight generated sounds where practical. Do not rely on external APIs or unverified audio URLs.
+
+Avoid overlapping sounds, excessive repetition, or audio that makes the site uncomfortable to use.
+
+Provide a visible mute/unmute control. Do not autoplay audio before the user interacts with the experience. Audio must never be the only way to communicate feedback.
+
+# 12. Final score and celebration experience
+
+After the round, show a dedicated result screen with the final score, percentage, scenarios completed, and a short learning summary.
+
+Do not show the result before the round has been completed, except as a clearly labelled partial result if the player exits early.
+
+### 90–100% — Excellent
+
+Display:
+
+- Animated confetti or a similarly tasteful celebration.
+- Celebration emojis such as 🎉 🏆 🛡️.
+- A friendly character or family celebrating, smiling, or clapping.
+- A cheerful sound if audio is enabled.
+- The actual score and percentage.
+- The message: “Brilliant! You're building strong digital safety instincts.”
+- Buttons for Share Result, Replay, and Review Lessons.
+
+Do not claim that a high score guarantees protection from all cyber threats.
+
+### 60–89% — Good progress
+
+Display:
+
+- A positive animation.
+- An encouraging sound.
+- A message such as: “Good progress! A few more careful checks can make your decisions even stronger.”
+- A short summary of lessons to revisit.
+- Buttons for Review Mistakes, Replay, and Share Result.
+
+### 0–59% — Keep learning
+
+Display:
+
+- A calm, friendly animation.
+- A gentle motivational sound.
+- A message such as: “No worries. That's what practice is for. Review the clues and try again—you can improve with each round.”
+- A brief summary of the most important missed clues.
+- A prominent Try Again button.
+- A Review Mistakes option.
+
+Never shame users or present a low score as proof that they are incapable of staying safe online.
+
+If the player completes too few scenarios for a meaningful result, show a partial result rather than a misleading final percentage.
+
+# 13. Share results with friends
+
+Add a working **Share Result** button to both game-result screens.
+
+The shared message must use the player's actual game name, score, and percentage.
+
+Example:
+
+“I scored 94% in CybAram Vilaiyaattu — Click or Skip! How well can you spot online risks? Try it yourself and practise safer digital habits.”
+
+Replace the example percentage with the real score.
+
+Use the Web Share API where supported. Provide a working Copy Result or Copy Link fallback where native sharing is unavailable.
+
+Allow sharing through compatible device and social applications. Do not invent platform profile URLs or pretend to provide a platform-specific integration that has not been implemented.
+
+Use the actual configured public URL of the CybAram game page.
+
+Do not share personal information, detailed answers, or private scenario data.
+
+# 14. Accessibility, performance, and privacy
+
+- Make every essential interaction accessible using a keyboard or touch.
+- Provide visible focus indicators and readable contrast.
+- Use appropriate image alt text.
+- Respect reduced-motion preferences where practical.
+- Allow the user to pause or exit a game.
+- Avoid flashing effects and disorienting movement.
+- Do not require login, registration, or payment.
+- Do not collect personal information to play.
+- Do not send scores or gameplay information to third parties.
+- Keep gameplay local wherever practical.
+- Do not claim offline support unless it is implemented and tested.
+
+Use efficient animations and clean up timers, event handlers, and audio resources when a game ends or the user leaves the page.
+
+# 15. Implementation requirements
+
+Inspect the existing project before editing.
+
+Create reusable components for:
+
+- Game header and progress.
+- Scenario presentation.
+- Character and scene animations.
+- Inspection clues.
+- Decision controls.
+- Feedback and score updates.
+- Audio controls.
+- Result and celebration screens.
+- Share Result behaviour.
+- Scenario selection and scoring.
+
+Keep the question data separate from the presentation components so that new scenarios can be added without rewriting the game engine.
+
+Use locally bundled assets where practical. Do not invent image paths, sound URLs, external services, or successful backend operations.
+
+Preserve all existing website routes, navigation, page styling, service forms, consent checkboxes, validation rules, and submission behaviour.
+
+# 16. Testing and acceptance criteria
+
+Test both games on desktop and mobile.
+
+Verify that:
+
+1. The landing page has a wide, attractive banner.
+2. Both game cards have relevant visual previews.
+3. The gameplay layout has clear spacing and hierarchy.
+4. The scenario is visually distinct from the investigation and decision sections.
+5. Character animations respond to the actual decision.
+6. Safe decisions trigger appropriate positive reactions.
+7. Risky decisions trigger contextual warnings and supportive explanations.
+8. Sound controls work and audio does not autoplay.
+9. High-, medium-, and low-score result states display the correct feedback.
+10. Share Result uses the actual score and has a functional fallback.
+11. Both games have independent scenario banks of at least 100 distinct scenarios each.
+12. Random selection avoids repeats within a round.
+13. Replay produces a fresh round when enough unused scenarios exist.
+14. Score and percentage calculations are correct.
+15. Keyboard and touch controls work.
+16. Existing website navigation and service forms remain functional.
+17. No broken images, broken audio assets, or runtime errors remain in the tested flows.
+
+Do not claim that all 200 scenarios or all media assets work unless they have actually been created and checked.
+
+## Final instruction
+
+Build a memorable, animated, user-friendly cybersecurity-awareness experience.
+
+The player should see a situation, understand the story, interact with the scene, make a decision, watch the character react, receive feedback, earn points, and learn a practical lesson.
+
+**Prioritise a clean layout, meaningful animations, accessible interactions, accurate scenarios, and real gameplay over excessive visual effects.**
+
+Implement the changes directly in the existing CybAram project and provide a summary of the components changed, the actual scenario counts, the assets added, and the tests performed.
