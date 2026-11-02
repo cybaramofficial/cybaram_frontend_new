@@ -21,9 +21,14 @@ const KNOWN_SERVICE_SLUGS = [
   'digital-safety-net'
 ];
 
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 function normalizePath(pathname: string): PageRoute {
+  const appPath = BASE_PATH && (pathname === BASE_PATH || pathname.startsWith(`${BASE_PATH}/`))
+    ? pathname.slice(BASE_PATH.length) || '/'
+    : pathname;
   // strip trailing slash if length > 1
-  const clean = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+  const clean = appPath.endsWith('/') && appPath.length > 1 ? appPath.slice(0, -1) : appPath;
 
   const validRoutes: PageRoute[] = [
     '/',
@@ -88,8 +93,9 @@ export default function App() {
 
   const handleNavigate = (path: PageRoute) => {
     setCurrentPath(path);
-    if (window.location.pathname !== path) {
-      window.history.pushState({}, '', path);
+    const targetPath = `${BASE_PATH}${path}`;
+    if (window.location.pathname !== targetPath) {
+      window.history.pushState({}, '', targetPath);
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
