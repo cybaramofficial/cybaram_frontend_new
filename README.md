@@ -18,3 +18,9 @@ View your app in AI Studio: https://ai.studio/apps/fa058cda-7508-46e9-8c8b-402e1
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Deploy to GitHub Pages
+
+In the repository settings, open **Pages** and set the build and deployment source to **GitHub Actions**. Pushing to `develop` or `main` runs the deployment workflow. The site is published at:
+
+https://cybaramofficial.github.io/cybaram_frontend_new/
