@@ -1,3 +1,5 @@
+import { assetUrl } from '../utils/assetUrl.ts';
+
 export interface ClickOrSkipScenario {
   id: string;
   category: string;
@@ -83,16 +85,18 @@ export const VILAIYAATTU_CONFIG = {
   heroHeadline: 'A Little More Awareness. A Lot More Confidence.',
   heroSubtitle:
     'Learn digital safety by playing, exploring, and solving through short, visual, everyday interactive puzzles.',
-  heroImage: '/src/assets/images/hero_cyber_umbrella_banner_1792984625298.jpg',
+  heroImage: assetUrl('/src/assets/images/hero_cyber_umbrella_banner_1792984625298.jpg'),
   heroImageAlt:
     'Digital safety umbrella protecting an Indian family and professionals using smartphones and laptops in a modern warm home',
-  coverCyberPuzzles: '/src/assets/images/cover_cyber_quest_1792993309160.jpg',
-  coverClickOrSkip: '/src/assets/images/cover_cyber_quest_1792993309160.jpg',
-  coverSpotTheScam: '/src/assets/images/cover_spot_scam_1792993323606.jpg',
+  coverCyberPuzzles: assetUrl('/src/assets/images/cover_cyber_quest_1792993309160.jpg'),
+  coverClickOrSkip: assetUrl('/src/assets/images/cover_cyber_quest_1792993309160.jpg'),
+  coverSpotTheScam: assetUrl('/src/assets/images/cover_spot_scam_1792993323606.jpg'),
   cyberPuzzlesTitle: 'CybAram Cyber Puzzles',
   cyberPuzzlesTagline: 'Learn digital safety by playing, exploring, and solving.',
   cyberPuzzlesBadge: 'Unified Casual Puzzle Game'
 };
+
+export const VILAIYAATTU_ENABLED = false;
 
 export const CLICK_OR_SKIP_SCENARIOS: ClickOrSkipScenario[] = [
   {

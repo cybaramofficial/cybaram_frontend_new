@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageRoute } from '../types.ts';
 import { PageHeroBanner } from '../components/PageHeroBanner.tsx';
+import { assetUrl } from '../utils/assetUrl.ts';
 import {
   ChevronRight,
   ArrowRight,
@@ -146,7 +147,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-8 border-t border-white/10">
               <div className="lg:col-span-5 rounded-2xl overflow-hidden border border-white/10 aspect-4/3 sm:aspect-16/10">
                 <img
-                  src="/assets/images/about_heritage_aram_1792746834801.jpg"
+                  src={assetUrl('/assets/images/about_heritage_aram_1792746834801.jpg')}
                   alt="Classical Tamil stone inscription embodying Aram beside a brass lamp and modern research notebook"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -273,7 +274,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             <div className="lg:col-span-5 space-y-4 sticky top-8">
               <div className="rounded-2xl overflow-hidden border border-[#E8EEEA] shadow-md bg-white aspect-4/3 sm:aspect-16/11">
                 <img
-                  src="/assets/images/about_intended_work_1792746835310.jpg"
+                  src={assetUrl('/assets/images/about_intended_work_1792746835310.jpg')}
                   alt="Indian advisors providing practical digital verification guidance to a local shopkeeper"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

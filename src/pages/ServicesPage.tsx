@@ -3,6 +3,7 @@ import { PageRoute } from '../types.ts';
 import { SERVICES_PAGE_FAQS } from '../data/siteData.ts';
 import { FaqAccordion } from '../components/FaqAccordion.tsx';
 import { PageHeroBanner } from '../components/PageHeroBanner.tsx';
+import { assetUrl } from '../utils/assetUrl.ts';
 import {
   Shield,
   Eye,
@@ -75,7 +76,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               <div className="md:col-span-3">
                 <div className="relative aspect-16/10 rounded-xl overflow-hidden border border-[#E8EEEA] bg-white">
                   <img
-                    src="/assets/images/cyber_victim_support_1792741336142.jpg"
+                    src={assetUrl('/assets/images/cyber_victim_support_1792741336142.jpg')}
                     alt="Cyber Victim Support"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -113,7 +114,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               <div className="md:col-span-3">
                 <div className="relative aspect-16/10 rounded-xl overflow-hidden border border-[#E8EEEA] bg-white">
                   <img
-                    src="/assets/images/digital-exposure-assessment-people-and-digital-saf-3.jpg"
+                    src={assetUrl('/assets/images/digital-exposure-assessment-people-and-digital-saf-3.jpg')}
                     alt="Digital Exposure Assessment"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -151,7 +152,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               <div className="md:col-span-3">
                 <div className="relative aspect-16/10 rounded-xl overflow-hidden border border-[#E8EEEA] bg-white">
                   <img
-                    src="/assets/images/osint_small_business_1792741337713.jpg"
+                    src={assetUrl('/assets/images/osint_small_business_1792741337713.jpg')}
                     alt="OSINT Research for Small Businesses"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -189,7 +190,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               <div className="md:col-span-3">
                 <div className="relative aspect-16/10 rounded-xl overflow-hidden border border-[#E8EEEA] bg-white">
                   <img
-                    src="/assets/images/impersonation_check_1792741338258.jpg"
+                    src={assetUrl('/assets/images/impersonation_check_1792741338258.jpg')}
                     alt="Impersonation Monitoring"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -227,7 +228,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               <div className="md:col-span-3">
                 <div className="relative aspect-16/10 rounded-xl overflow-hidden border border-[#E8EEEA] bg-white">
                   <img
-                    src="/assets/images/wellbeing_listening_1792744888958.jpg"
+                    src={assetUrl('/assets/images/wellbeing_listening_1792744888958.jpg')}
                     alt="Mental Well-Being Support"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -265,7 +266,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               <div className="md:col-span-3">
                 <div className="relative aspect-16/10 rounded-xl overflow-hidden border border-[#E8EEEA] bg-white">
                   <img
-                    src="/src/assets/images/service_digital_safety_net_1792753239595.jpg"
+                    src={assetUrl('/src/assets/images/service_digital_safety_net_1792753239595.jpg')}
                     alt="Digital Safety Net"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { PageRoute } from '../types.ts';
 import { Menu, X, ArrowRight, Shield } from 'lucide-react';
-import { VILAIYAATTU_CONFIG } from '../data/vilaiyaattuConfig.ts';
+import { VILAIYAATTU_CONFIG, VILAIYAATTU_ENABLED } from '../data/vilaiyaattuConfig.ts';
+import { assetUrl } from '../utils/assetUrl.ts';
 
 interface HeaderProps {
   currentPath: PageRoute;
@@ -14,7 +15,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
   const navLinks: { label: string; path: PageRoute; isSpecial?: boolean }[] = [
     { label: 'Home', path: '/' },
     { label: 'Services', path: '/services' },
-    { label: VILAIYAATTU_CONFIG.sectionName, path: '/vilaiyaattu', isSpecial: true },
+    ...(VILAIYAATTU_ENABLED ? [{ label: VILAIYAATTU_CONFIG.sectionName, path: '/vilaiyaattu' as const, isSpecial: true }] : []),
     { label: 'Opportunities', path: '/opportunities' },
     { label: 'About Us', path: '/about-us' },
     { label: 'Contact Us', path: '/contact-us' }
@@ -39,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
           >
             <div className="w-11 h-11 rounded-lg overflow-hidden border border-[#E8EEEA] bg-white shadow-xs p-0.5 flex items-center justify-center">
               <img
-                src="/assets/images/cybaram-detect-protect-support.jpeg"
+                src={assetUrl('/assets/images/cybaram-detect-protect-support.jpeg')}
                 alt="CybAram Logo"
                 className="w-full h-full object-cover rounded-md"
                 referrerPolicy="no-referrer"

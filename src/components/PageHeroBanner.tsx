@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageRoute } from '../types.ts';
 import { ChevronRight, ShieldCheck } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl.ts';
 
 export interface BreadcrumbItem {
   label: string;
@@ -97,7 +98,7 @@ export const PageHeroBanner: React.FC<PageHeroBannerProps> = ({
 
             <div className="relative rounded-3xl overflow-hidden shadow-xl border-2 border-[#172B4D]/10 bg-white h-72 sm:h-96 lg:h-[430px] w-full transition-all duration-300">
               <img
-                src={imageSrc}
+                src={assetUrl(imageSrc)}
                 alt={imageAlt}
                 className="w-full h-full object-cover object-center transform hover:scale-[1.02] transition-transform duration-700 ease-out"
                 referrerPolicy="no-referrer"
